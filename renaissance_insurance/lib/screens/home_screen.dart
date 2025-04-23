@@ -8,6 +8,7 @@ import '../utils/constants.dart';
 import '../widgets/task_item_widget.dart';
 import '../widgets/task_form.dart';
 import '../custom_widgets/programmatic_expansion_tile.dart';
+import 'pdf_converter_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -182,6 +183,17 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text(AppStrings.taskBoard),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.picture_as_pdf),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const PdfConverterScreen(),
+                ),
+              );
+            },
+            tooltip: 'PDF Converter',
+          ),
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () {
