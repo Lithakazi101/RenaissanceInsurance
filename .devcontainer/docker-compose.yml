@@ -1,0 +1,21 @@
+version: '3'
+services:
+  flutter:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace:cached
+      - ~/.ssh:/root/.ssh:ro
+      - flutter-cache:/root/.pub-cache
+      - gradle-cache:/root/.gradle
+    command: sleep infinity
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY}
+    # Uncomment the next line to use a non-root user
+    # user: vscode
+
+volumes:
+  flutter-cache:
+  gradle-cache: 

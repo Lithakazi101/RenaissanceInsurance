@@ -35,14 +35,14 @@ class ProgrammaticExpansionTile extends StatefulWidget {
   final bool initiallyExpanded;
 
   const ProgrammaticExpansionTile({
-    Key? key,
+    super.key,
     required this.title,
     this.onExpansionChanged,
     this.children = const <Widget>[],
     this.backgroundColor,
     this.trailing,
     this.initiallyExpanded = false,
-  }) : super(key: key);
+  });
 
   @override
   ProgrammaticExpansionTileState createState() =>
@@ -110,8 +110,9 @@ class ProgrammaticExpansionTileState extends State<ProgrammaticExpansionTile>
         }
         PageStorage.of(context).writeState(context, _isExpanded);
       });
-      if (widget.onExpansionChanged != null)
+      if (widget.onExpansionChanged != null) {
         widget.onExpansionChanged!(_isExpanded);
+      }
     }
   }
 
@@ -190,7 +191,7 @@ class ProgrammaticExpander extends StatefulWidget {
   final ArrowPosition arrowPosition;
 
   const ProgrammaticExpander({
-    Key? key,
+    super.key,
     required this.child,
     required this.expandedContent,
     this.initiallyExpanded = false,
@@ -198,7 +199,7 @@ class ProgrammaticExpander extends StatefulWidget {
     this.onExpansionChanged,
     this.arrowBuilder,
     this.arrowPosition = ArrowPosition.right,
-  }) : super(key: key);
+  });
 
   @override
   ProgrammaticExpanderState createState() => ProgrammaticExpanderState();

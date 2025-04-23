@@ -6,7 +6,6 @@ import 'providers/pdf_converter_provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
 import 'utils/constants.dart';
-import 'utils/package_patch.dart';
 
 void main() {
   runApp(const MyApp());
